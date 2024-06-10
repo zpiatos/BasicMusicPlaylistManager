@@ -154,8 +154,8 @@ class MusicPlaylistManager: # PABAGO NG PATH TAS KEEP NIYO YUNG "user_infos.txt"
                     try:
                         username = input("Enter your username: ")
 
-                        if not username.strip():
-                            raise ValueError("Username cannot be empty or consist only of spaces.")
+                        if not username.strip() or " " in username:
+                            raise ValueError("Username cannot be empty, have spaces, or consist only of spaces.")
 
                         if len(username) < 8:
                             raise ValueError("Username must be at least 8 characters long.")
